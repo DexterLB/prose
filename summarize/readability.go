@@ -3,7 +3,7 @@ package summarize
 import (
 	"math"
 
-	"github.com/jdkato/prose/internal/util"
+	"github.com/DexterLB/prose/internal/util"
 )
 
 // FleschKincaid computes the Flesch–Kincaid grade level

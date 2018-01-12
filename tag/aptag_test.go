@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/jdkato/prose/internal/util"
+	"github.com/DexterLB/prose/internal/util"
 	"github.com/stretchr/testify/assert"
 )
 

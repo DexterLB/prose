@@ -1,4 +1,4 @@
-BASE_DIR=$(shell echo $$GOPATH)/src/github.com/jdkato/prose
+BASE_DIR=$(shell echo $$GOPATH)/src/github.com/DexterLB/prose
 BUILD_DIR=./builds
 
 LDFLAGS=-ldflags "-s -w"
@@ -52,7 +52,7 @@ lint:
 
 setup:
 	go get -u github.com/shogo82148/go-shuffle
-	go get -u github.com/jdkato/syllables
+	go get -u github.com/DexterLB/syllables
 	go get -u github.com/montanaflynn/stats
 	go get -u gopkg.in/neurosnap/sentences.v1/english
 	go get -u github.com/stretchr/testify/assert

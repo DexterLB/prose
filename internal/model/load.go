@@ -7,7 +7,7 @@ import (
 	"bytes"
 	"encoding/gob"
 
-	"github.com/jdkato/prose/internal/util"
+	"github.com/DexterLB/prose/internal/util"
 )
 
 // GetAsset returns the named Asset.

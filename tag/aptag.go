@@ -25,10 +25,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/jdkato/prose/internal/model"
-	"github.com/jdkato/prose/internal/util"
+	"github.com/DexterLB/prose/internal/model"
+	"github.com/DexterLB/prose/internal/util"
 	"github.com/montanaflynn/stats"
-	"github.com/shogo82148/go-shuffle"
 )
 
 var none = regexp.MustCompile(`^(?:0|\*[\w?]\*|\*\-\d{1,3}|\*[A-Z]+\*\-\d{1,3}|\*)$`)

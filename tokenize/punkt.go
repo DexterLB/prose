@@ -24,7 +24,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/jdkato/prose/internal/util"
+	"github.com/DexterLB/prose/internal/util"
 	"gopkg.in/neurosnap/sentences.v1"
 	"gopkg.in/neurosnap/sentences.v1/data"
 )

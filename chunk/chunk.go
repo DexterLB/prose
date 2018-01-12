@@ -5,7 +5,7 @@ package chunk
 import (
 	"regexp"
 
-	"github.com/jdkato/prose/tag"
+	"github.com/DexterLB/prose/tag"
 )
 
 // quadString creates a string containing all of the tags, each padded to 4

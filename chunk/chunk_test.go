@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/jdkato/prose/tag"
-	"github.com/jdkato/prose/tokenize"
+	"github.com/DexterLB/prose/tag"
+	"github.com/DexterLB/prose/tokenize"
 )
 
 func Example() {

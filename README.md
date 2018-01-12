@@ -1,16 +1,16 @@
-# prose [![Build Status](https://travis-ci.org/jdkato/prose.svg?branch=master)](https://travis-ci.org/jdkato/prose) [![Build status](https://ci.appveyor.com/api/projects/status/24bepq85nnnk4scr?svg=true)](https://ci.appveyor.com/project/jdkato/prose) [![GoDoc](https://godoc.org/github.com/golang/gddo?status.svg)](https://godoc.org/github.com/jdkato/prose) [![Coverage Status](https://coveralls.io/repos/github/jdkato/prose/badge.svg?branch=master)](https://coveralls.io/github/jdkato/prose?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/jdkato/prose)](https://goreportcard.com/report/github.com/jdkato/prose) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/avelino/awesome-go#natural-language-processing)
+# prose [![Build Status](https://travis-ci.org/jdkato/prose.svg?branch=master)](https://travis-ci.org/jdkato/prose) [![Build status](https://ci.appveyor.com/api/projects/status/24bepq85nnnk4scr?svg=true)](https://ci.appveyor.com/project/jdkato/prose) [![GoDoc](https://godoc.org/github.com/golang/gddo?status.svg)](https://godoc.org/github.com/DexterLB/prose) [![Coverage Status](https://coveralls.io/repos/github/jdkato/prose/badge.svg?branch=master)](https://coveralls.io/github/jdkato/prose?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/DexterLB/prose)](https://goreportcard.com/report/github.com/DexterLB/prose) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/avelino/awesome-go#natural-language-processing)
 
-`prose` is Go library for text (primarily English at the moment) processing that supports tokenization, part-of-speech tagging, named-entity extraction, and more. The library's functionality is split into subpackages designed for modular use. 
+`prose` is Go library for text (primarily English at the moment) processing that supports tokenization, part-of-speech tagging, named-entity extraction, and more. The library's functionality is split into subpackages designed for modular use.
 
-See the [GoDoc documentation](https://godoc.org/github.com/jdkato/prose) for more information.
+See the [GoDoc documentation](https://godoc.org/github.com/DexterLB/prose) for more information.
 
 ## Install
 
 ```console
-$ go get github.com/jdkato/prose/...
+$ go get github.com/DexterLB/prose/...
 ```
 
-> **NOTE**: When using some vendoring tools, such as `govendor`, you may need to include the `github.com/jdkato/prose/internal/` package in addition to the core package(s). See [#14](https://github.com/jdkato/prose/issues/14) for more information.
+> **NOTE**: When using some vendoring tools, such as `govendor`, you may need to include the `github.com/DexterLB/prose/internal/` package in addition to the core package(s). See [#14](https://github.com/DexterLB/prose/issues/14) for more information.
 
 ## Usage
 
@@ -24,9 +24,9 @@ $ go get github.com/jdkato/prose/...
 * [License](#license)
 
 
-### Tokenizing ([GoDoc](https://godoc.org/github.com/jdkato/prose/tokenize))
+### Tokenizing ([GoDoc](https://godoc.org/github.com/DexterLB/prose/tokenize))
 
-Word, sentence, and regexp tokenizers are available. Every tokenizer implements the [same interface](https://godoc.org/github.com/jdkato/prose/tokenize#ProseTokenizer), which makes it easy to customize tokenization in other parts of the library.
+Word, sentence, and regexp tokenizers are available. Every tokenizer implements the [same interface](https://godoc.org/github.com/DexterLB/prose/tokenize#ProseTokenizer), which makes it easy to customize tokenization in other parts of the library.
 
 ```go
 package main
@@ -34,7 +34,7 @@ package main
 import (
     "fmt"
 
-    "github.com/jdkato/prose/tokenize"
+    "github.com/DexterLB/prose/tokenize"
 )
 
 func main() {
@@ -47,7 +47,7 @@ func main() {
 }
 ```
 
-### Tagging ([GoDoc](https://godoc.org/github.com/jdkato/prose/tag))
+### Tagging ([GoDoc](https://godoc.org/github.com/DexterLB/prose/tag))
 
 The `tag` package includes a port of Textblob's ["fast and accurate" POS tagger](https://github.com/sloria/textblob-aptagger). Below is a comparison of its performance against [NLTK](http://www.nltk.org/)'s implementation of the same tagger on the Treebank corpus:
 
@@ -56,7 +56,7 @@ The `tag` package includes a port of Textblob's ["fast and accurate" POS tagger]
 | NLTK    |    0.893 |               7.224 |
 | `prose` |    0.961 |               2.538 |
 
-(See [`scripts/test_model.py`](https://github.com/jdkato/aptag/blob/master/scripts/test_model.py) for more information.)
+(See [`scripts/test_model.py`](https://github.com/DexterLB/aptag/blob/master/scripts/test_model.py) for more information.)
 
 ```go
 package main
@@ -64,8 +64,8 @@ package main
 import (
     "fmt"
 
-    "github.com/jdkato/prose/tag"
-    "github.com/jdkato/prose/tokenize"
+    "github.com/DexterLB/prose/tag"
+    "github.com/DexterLB/prose/tokenize"
 )
 
 func main() {
@@ -79,11 +79,11 @@ func main() {
 }
 ```
 
-### Transforming ([GoDoc](https://godoc.org/github.com/jdkato/prose/transform))
+### Transforming ([GoDoc](https://godoc.org/github.com/DexterLB/prose/transform))
 
-The `tranform` package implements a number of functions for changing the case of strings, including `Title`, `Snake`, `Pascal`, and `Camel`. 
+The `tranform` package implements a number of functions for changing the case of strings, including `Title`, `Snake`, `Pascal`, and `Camel`.
 
-Additionally, unlike `strings.Title`, `tranform.Title` adheres to common guidelines&mdash;including styles for both the [AP Stylebook](https://www.apstylebook.com/) and [The Chicago Manual of Style](http://www.chicagomanualofstyle.org/home.html). You can also add your own custom style by defining an [`IgnoreFunc`](https://godoc.org/github.com/jdkato/prose/transform#IgnoreFunc) callback.
+Additionally, unlike `strings.Title`, `tranform.Title` adheres to common guidelines&mdash;including styles for both the [AP Stylebook](https://www.apstylebook.com/) and [The Chicago Manual of Style](http://www.chicagomanualofstyle.org/home.html). You can also add your own custom style by defining an [`IgnoreFunc`](https://godoc.org/github.com/DexterLB/prose/transform#IgnoreFunc) callback.
 
 Inspiration and test data taken from [python-titlecase](https://github.com/ppannuto/python-titlecase) and [to-title-case](https://github.com/gouch/to-title-case).
 
@@ -94,7 +94,7 @@ import (
     "fmt"
     "strings"
 
-    "github.com/jdkato/prose/transform"
+    "github.com/DexterLB/prose/transform"
 )
 
 func main() {
@@ -105,7 +105,7 @@ func main() {
 }
 ```
 
-### Summarizing ([GoDoc](https://godoc.org/github.com/jdkato/prose/summarize))
+### Summarizing ([GoDoc](https://godoc.org/github.com/DexterLB/prose/summarize))
 
 The `summarize` package includes functions for computing standard readability and usage statistics. It's among the most accurate implementations available due to its reliance on legitimate tokenizers (whereas others, like [readability-score](https://github.com/DaveChild/Text-Statistics/blob/master/src/DaveChild/TextStatistics/Text.php#L308), rely on naive regular expressions).
 
@@ -117,7 +117,7 @@ package main
 import (
     "fmt"
 
-    "github.com/jdkato/prose/summarize"
+    "github.com/DexterLB/prose/summarize"
 )
 
 func main() {
@@ -126,7 +126,7 @@ func main() {
 }
 ```
 
-### Chunking ([GoDoc](https://godoc.org/github.com/jdkato/prose/chunk))
+### Chunking ([GoDoc](https://godoc.org/github.com/DexterLB/prose/chunk))
 
 The `chunk` package implements named-entity extraction using a regular expression indicating what chunks you're looking for and pre-tagged input.
 
@@ -136,9 +136,9 @@ package main
 import (
     "fmt"
 
-    "github.com/jdkato/prose/chunk"
-    "github.com/jdkato/prose/tag"
-    "github.com/jdkato/prose/tokenize"
+    "github.com/DexterLB/prose/chunk"
+    "github.com/DexterLB/prose/tag"
+    "github.com/DexterLB/prose/tokenize"
 )
 
 func main() {
@@ -154,10 +154,10 @@ func main() {
 
 ## License
 
-If not otherwise specified (see below), the source files are distributed under MIT License found in the [LICENSE](https://github.com/jdkato/prose/blob/master/LICENSE) file.
+If not otherwise specified (see below), the source files are distributed under MIT License found in the [LICENSE](https://github.com/DexterLB/prose/blob/master/LICENSE) file.
 
 Additionally, the following files contain their own license information:
 
-- [`tag/aptag.go`](https://github.com/jdkato/prose/blob/master/tag/aptag.go): MIT © Matthew Honnibal.
-- [`tokenize/punkt.go`](https://github.com/jdkato/prose/blob/master/tokenize/punkt.go): MIT © Eric Bower.
-- [`tokenize/pragmatic.go`](https://github.com/jdkato/prose/blob/master/tokenize/pragmatic.go): MIT © Kevin S. Dias.
+- [`tag/aptag.go`](https://github.com/DexterLB/prose/blob/master/tag/aptag.go): MIT © Matthew Honnibal.
+- [`tokenize/punkt.go`](https://github.com/DexterLB/prose/blob/master/tokenize/punkt.go): MIT © Eric Bower.
+- [`tokenize/pragmatic.go`](https://github.com/DexterLB/prose/blob/master/tokenize/pragmatic.go): MIT © Kevin S. Dias.

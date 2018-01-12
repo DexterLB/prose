@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/jdkato/prose/internal/util"
+	"github.com/DexterLB/prose/internal/util"
 )
 
 var tokenizer = NewPunktSentenceTokenizer()

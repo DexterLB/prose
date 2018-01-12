@@ -8,8 +8,8 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/jdkato/prose/internal/util"
-	"github.com/jdkato/prose/tokenize"
+	"github.com/DexterLB/prose/internal/util"
+	"github.com/DexterLB/prose/tokenize"
 
 	"github.com/montanaflynn/stats"
 )

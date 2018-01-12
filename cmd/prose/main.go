@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/jdkato/prose/tag"
+	"github.com/DexterLB/prose/tag"
 	"github.com/urfave/cli"
 )
 

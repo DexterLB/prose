@@ -29,7 +29,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/jdkato/prose/internal/util"
+	"github.com/DexterLB/prose/internal/util"
 )
 
 /* Public API */
@@ -51,6 +51,13 @@ type PragmaticSegmenter struct {
 func NewPragmaticSegmenter(lang string) (*PragmaticSegmenter, error) {
 	if p, ok := langToProcessor[lang]; ok {
 		return &PragmaticSegmenter{processor: p}, nil
+	}
+	return nil, errors.New("unknown language")
+}
+
+func NewThreadSafePragmaticSegmenter(lang string) (*PragmaticSegmenter, error) {
+	if _, ok := langToProcessor[lang]; ok {
+		return &PragmaticSegmenter{processor: newProcessor(lang)}, nil
 	}
 	return nil, errors.New("unknown language")
 }

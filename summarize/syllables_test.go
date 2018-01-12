@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/jdkato/prose/internal/util"
+	"github.com/DexterLB/prose/internal/util"
 	"github.com/montanaflynn/stats"
 	"github.com/stretchr/testify/assert"
 )

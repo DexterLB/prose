@@ -3,7 +3,7 @@ package summarize
 import (
 	"strings"
 
-	"github.com/jdkato/prose/internal/util"
+	"github.com/DexterLB/prose/internal/util"
 	"github.com/montanaflynn/stats"
 )
 
